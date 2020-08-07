@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.15)
+project(test_tvm)
+
+set(CMAKE_CXX_STANDARD 14)
+include_directories(incubator-tvm/include)
+include_directories(incubator-tvm/3rdparty/dmlc-core/include)
+include_directories(incubator-tvm/3rdparty/dlpack/include)
+ADD_SUBDIRECTORY(incubator-tvm)
+add_executable(test_tvm main.cpp)
+target_link_libraries(test_tvm tvm tvm_topi)
